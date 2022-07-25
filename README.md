@@ -9,4 +9,8 @@
 2. Shadow DOM
 3. HTML Templates
 
+# VS Code Extensions to Support Building Web Components
+1. Comment tagged template
+
+
 # References
