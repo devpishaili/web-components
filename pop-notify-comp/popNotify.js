@@ -1,10 +1,8 @@
 const template = document.createElement("template");
 
-<template>
-  <style></style>
-</template>;
 template.innerHTML = /* css */ `
     <style>
+
         .tooltip-container {
             display: inline-block;
             position: relative;
@@ -100,4 +98,4 @@ class PopNotify extends HTMLElement {
   }
 }
 
-window.customElements.define("popup-notify", PopNotify);
+customElements.define("popup-notify", PopNotify);
