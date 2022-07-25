@@ -9,7 +9,7 @@
     <title>Interactive Web Component</title>
   </head>
   <body>
-    <div>
+    <!-- <div>
       <h3>All New Dew</h3>
 
       <apocalyptic-warning>
@@ -19,7 +19,7 @@
       <apocalyptic-warning>
         <span slot="interactive-status">a not so Interactive </span>
       </apocalyptic-warning>
-    </div>
+    </div> -->
 
     <div>
       <h1>Undying Love: A Zombie Dating Service</h1>
@@ -115,7 +115,7 @@
       </div>
     </div>
 
-    <template id="warningtemplate">
+    <!-- <template id="warningtemplate">
       <style>
         p {
           background-color: pink;
@@ -127,15 +127,31 @@
         This is <slot name="interactive-status">an Interactive</slot> web
         Component
       </p>
-    </template>
+    </template> -->
 
     <template id="zprofiletemplate">
       <style>
-        img {
+        img,
+        ::slotted(img) {
           width: 100%;
           max-width: 300px;
           height: auto;
           margin: 0 1em 0 0;
+        }
+        .pic {
+          animation: picfadein 1s 0.5s ease-in forwards;
+          transform: translateY(20px);
+          opacity: 0;
+        }
+        @keyframes picfadein {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
         }
         h2 {
           font-size: 3em;
@@ -157,7 +173,8 @@
           color: #555;
         }
         li,
-        ul {
+        ul,
+        ::slotted(ul) {
           display: inline;
           padding: 0;
         }
@@ -170,44 +187,122 @@
         li:last-child::before {
           content: " and ";
         }
+        .likebtn {
+          float: right;
+          font-weight: bold;
+          color: #960b0b;
+          display: block;
+          border: 1px solid #960b0b;
+          padding: 0.25em;
+          border-radius: 0.5em;
+          cursor: pointer;
+        }
+        #trigger:checked + .likebtn {
+          background-color: #960b0b;
+          color: #fff;
+        }
+        #trigger {
+          display: none;
+        }
+        .profile-wrapper {
+          border: 1px solid red;
+          padding: 1em;
+          margin-bottom: 2em;
+          display: grid;
+          grid-template-columns: 2fr 4fr;
+          column-gap: 20px;
+          overflow: hidden;
+          position: relative;
+        }
+        .heart {
+          position: absolute;
+          width: 20%;
+          transform: scale(0.0001);
+          top: 0.75em;
+          left: 0.75em;
+          transform-origin: left top;
+        }
+        @keyframes heartanim {
+          0% {
+            transform: scale(0.001);
+            opacity: 1;
+          }
+          50% {
+            transform: scale(1);
+            opacity: 1;
+          }
+          85%,
+          100% {
+            transform: scale(0.4);
+            opacity: 1;
+          }
+        }
+        #trigger:checked ~ .heart {
+          animation: 1s heartanim ease-in-out forwards;
+        }
       </style>
 
-      <div class="profilepic">
-        <slot name="profile-image">
-          <img src="https://assets.codepen.io/1804713/default.png" alt="" />
-        </slot>
-      </div>
-
-      <div class="info">
-        <h2>
-          <slot name="zombie-name" part="zname">Zombie Bob</slot>
-        </h2>
-
-        <span class="age">
-          <span class="label">Age:</span>
-          <slot name="z-age">37</slot>
-        </span>
-
-        <span class="infection-date">
-          <span class="label">Age:</span>
-          <slot name="idate">September 12, 2025</slot>
-        </span>
-
-        <div class="interests">
-          <span class="label">Interests:</span>
-          <slot name="z-interests">
-            <ul>
-              <li>Long walks on Beach</li>
-              <li>Brains</li>
-              <li>Defeating humanity</li>
-            </ul>
-          </slot>
+      <div class="profile-wrapper">
+        <div class="profilepic">
+          <div class="pic">
+            <slot name="profile-image">
+              <img src="https://assets.codepen.io/1804713/default.png" alt="" />
+            </slot>
+          </div>
         </div>
 
-        <span class="z-statement">
-          <span class="label">Apocalyptic Statement:</span>
-          <slot name="statement">Mooooooooan!</slot>
-        </span>
+        <div class="info">
+          <input type="checkbox" id="trigger" /><label
+            class="likebtn"
+            for="trigger"
+            >Like</label
+          >
+
+          <h2>
+            <slot name="zombie-name" part="zname">Zombie Bob</slot>
+          </h2>
+
+          <span class="age">
+            <span class="label">Age:</span>
+            <slot name="z-age">37</slot>
+          </span>
+
+          <span class="infection-date">
+            <span class="label">Age:</span>
+            <slot name="idate">September 12, 2025</slot>
+          </span>
+
+          <div class="interests">
+            <span class="label">Interests:</span>
+            <slot name="z-interests">
+              <ul>
+                <li>Long walks on Beach</li>
+                <li>Brains</li>
+                <li>Defeating humanity</li>
+              </ul>
+            </slot>
+          </div>
+
+          <span class="z-statement">
+            <span class="label">Apocalyptic Statement:</span>
+            <slot name="statement">Mooooooooan!</slot>
+          </span>
+
+          <svg
+            viewBox="0 0 160 135"
+            class="heart"
+            xmlns="http://www.w3.org/2000/svg"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            stroke-linejoin="round"
+            stroke-miterlimit="2"
+          >
+            <path
+              d="M61 12V0H25v12H12v13H0v36h12v13h13v12h12v12h12v12h12v13h13v12h12v-12h13v-13h11V98h13V86h-1 13V74h12V61h12V25h-12V12h-12V0H98v12H85v13H74V12H61z"
+              fill="#7aff00"
+            />
+          </svg>
+        </div>
       </div>
     </template>
 

@@ -23,12 +23,8 @@ h1 {
 
 zombie-profile {
   width: 100%;
-  border: 1px solid red;
-  padding: 1em;
-  display: grid;
-  grid-template-columns: 2fr 4fr;
-  column-gap: 20px;
 }
+
 zombie-profile img {
   width: 100%;
   max-width: 300px;
