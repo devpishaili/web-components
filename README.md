@@ -3,5 +3,10 @@
  
  Web Components do not require any 3rd party libraries or frameworks but can certainly be used with them.
 
+# 3  Building Blocks of Web Components
+
+1. Custom Elements
+2. Shadow DOM
+3. HTML Templates
 
 # References
