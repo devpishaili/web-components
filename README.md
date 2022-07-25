@@ -12,5 +12,9 @@
 # VS Code Extensions to Support Building Web Components
 1. Comment tagged template
 
+# Alternative Libraries and Frameworks
+1. Vue
+2. Angular
+3. React
 
 # References
