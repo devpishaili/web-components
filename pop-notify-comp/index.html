@@ -4,15 +4,31 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- DPILI CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/devpishaili/dpili/dist/dpili.min.css"
+    />
+    <link rel="stylesheet" href="./main.css" />
     <title>PopNotify WebComponent from DesignCourse</title>
   </head>
   <body>
-    <h1>Awesome Tooltip</h1>
+    <div class="container">
+      <h1>Awesome Tooltip</h1>
 
-    <p>
-      Lorem ipsum dolor <popup-notify></popup-notify> sit amet consectetur
-      adipisicing elit. Iure iusto voluptas maiores dolorem autem vel!
-    </p>
+      <p>
+        Lorem ipsum dolor
+        <popup-notify tip_bg="#ffcc00" tip_color="#fff">
+          <span slot="message">Lorem ipsum dolor sit amet consectetur.</span>
+        </popup-notify>
+        sit amet consectetur adipisicing elit. Iure iusto voluptas maiores
+        <popup-notify tip_bg="#f4f4f4" tip_color="#272727">
+          <span slot="message">Now, this is real message</span>
+        </popup-notify>
+        dolorem autem vel!
+      </p>
+    </div>
     <script src="./popNotify.js" async defer></script>
   </body>
 </html>
