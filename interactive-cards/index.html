@@ -204,6 +204,24 @@
         #trigger {
           display: none;
         }
+        .messagebtn {
+          position: absolute;
+          display: none;
+          bottom: 1em;
+          right: 1em;
+          font-size: 1em;
+          font-weight: bold;
+          color: #960b0b;
+          border: 1px solid #960b0b;
+          padding: 0.5em;
+          border-radius: 0.5em;
+          background-color: #fff;
+          cursor: pointer;
+        }
+
+        #trigger:checked ~ .messagebtn {
+          display: block;
+        }
         .profile-wrapper {
           border: 1px solid red;
           padding: 1em;
@@ -239,6 +257,60 @@
         }
         #trigger:checked ~ .heart {
           animation: 1s heartanim ease-in-out forwards;
+        }
+        .hello {
+          width: 50%;
+          position: absolute;
+          top: 0;
+          left: 25%;
+          border: 1px solid #960b0b;
+          background-color: rgba(255, 255, 255, 0.9);
+          padding: 1em;
+          margin: 0.5em 0;
+        }
+
+        .hello label {
+          display: block;
+        }
+
+        .hello * {
+          margin-bottom: 0.5em;
+        }
+
+        .hello input[type="text"],
+        .hello textarea {
+          width: calc(100% - 0.5em);
+          border: 1px solid #960b0b;
+        }
+
+        .hello input[type="text"] {
+          height: 1.75em;
+          padding: 0.25em;
+        }
+
+        .hello textarea {
+          height: 3em;
+          padding: 0.25em;
+        }
+
+        .hello input[type="submit"] {
+          font-weight: bold;
+          color: #960b0b;
+          border: 1px solid #960b0b;
+          padding: 0.25em 0.5em;
+          border-radius: 0.5em;
+          background-color: #fff;
+          margin: 0;
+        }
+
+        .hello button {
+          position: absolute;
+          top: 0.25em;
+          right: 0.25em;
+          color: #960b0b;
+          border-radius: 0.5em;
+          background-color: #fff;
+          border: none;
         }
       </style>
 
@@ -302,6 +374,8 @@
               fill="#7aff00"
             />
           </svg>
+
+          <button type="button" class="messagebtn">Message</button>
         </div>
       </div>
     </template>
