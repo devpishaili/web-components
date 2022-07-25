@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title></title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./main.css" />
+  </head>
+  <body>
+    <h3>Web Component Cards</h3>
+    <div class="cards">
+      <user-card
+        name="Peter"
+        avatar="https://randomuser.me/api/portraits/men/1.jpg "
+      >
+        <div slot="email">paulishaili@gmail.com</div>
+        <div slot="phone">234-555-555-55</div>
+      </user-card>
+      <user-card
+        name="Jane"
+        avatar="https://randomuser.me/api/portraits/women/1.jpg "
+      ></user-card>
+      <user-card
+        name="John"
+        avatar="https://randomuser.me/api/portraits/men/2.jpg "
+      />
+    </div>
+    <script src="./UserCard.js" async defer></script>
+  </body>
+</html>
