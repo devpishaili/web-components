@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,300;0,700;1,300&display=swap");
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Libre Franklin", sans-serif;
+}
+h1 {
+  text-align: center;
+}
+.profiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  width: 100%;
+  gap: 2rem;
+  margin: auto;
+  padding: 0 5%;
+}
+
+.profiles > :nth-child(odd) {
+  margin-right: 2em;
+}
+
+zombie-profile {
+  width: 100%;
+  border: 1px solid red;
+  padding: 1em;
+  display: grid;
+  grid-template-columns: 2fr 4fr;
+  column-gap: 20px;
+}
+zombie-profile img {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  margin: 0 1em 0 0;
+}
+zombie-profile li,
+zombie-profile ul {
+  display: inline;
+  padding: 0;
+}
+zombie-profile li::after {
+  content: ", ";
+}
+zombie-profile li:last-child::after {
+  content: "";
+}
+zombie-profile li:last-child::before {
+  content: " and ";
+}
+
+@media screen and (max-width: 600px) {
+  .profiles {
+    grid-template-columns: 1fr;
+  }
+}
