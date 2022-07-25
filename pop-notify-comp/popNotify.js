@@ -1,8 +1,10 @@
 const template = document.createElement("template");
 
-template.innerHTML = `
+<template>
+  <style></style>
+</template>;
+template.innerHTML = /* css */ `
     <style>
-
         .tooltip-container {
             display: inline-block;
             position: relative;
@@ -89,11 +91,11 @@ class PopNotify extends HTMLElement {
 
     if (this.getAttribute("tip_bg")) {
       this.shadowRoot.querySelector(".notify-container").style.background =
-        this.getAttribute('tip_bg');
+        this.getAttribute("tip_bg");
     }
     if (this.getAttribute("tip_color")) {
       this.shadowRoot.querySelector(".notify-container").style.color =
-        this.getAttribute('tip_color');
+        this.getAttribute("tip_color");
     }
   }
 }
