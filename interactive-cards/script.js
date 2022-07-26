@@ -85,3 +85,18 @@ customElements.define(
     }
   }
 );
+
+customElements.define(
+  "zombie-watermark",
+  class extends HTMLElement {
+    constructor() {
+      super();
+      let watermark = document.getElementById("zwatermarktemplate");
+      let mywatermark = watermark.content;
+
+      const shadowRoot = this.attachShadow({ mode: "open" }).appendChild(
+        mywatermark.cloneNode(true)
+      );
+    }
+  }
+);

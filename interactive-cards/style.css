@@ -51,3 +51,7 @@ zombie-profile li:last-child::before {
     grid-template-columns: 1fr;
   }
 }
+
+::part(copyright) {
+  color: rgb(0 100 0 / 0.125);
+}

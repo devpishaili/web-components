@@ -312,6 +312,18 @@
           background-color: #fff;
           border: none;
         }
+
+        zombie-watermark {
+          position: absolute;
+          z-index: -1;
+          width: 110%;
+          top: -5%;
+          left: -5%;
+        }
+
+        ::part(watermark) {
+          color: rgb(0 0 255 / 0.1);
+        }
       </style>
 
       <div class="profile-wrapper">
@@ -340,7 +352,7 @@
           </span>
 
           <span class="infection-date">
-            <span class="label">Age:</span>
+            <span class="label">Infection Date:</span>
             <slot name="idate">September 12, 2025</slot>
           </span>
 
@@ -377,6 +389,63 @@
 
           <button type="button" class="messagebtn">Message</button>
         </div>
+
+        <zombie-watermark exportparts="copyright"></zombie-watermark>
+      </div>
+    </template>
+
+    <template id="zwatermarktemplate">
+      <style>
+        div {
+          text-transform: uppercase;
+          font-size: 2.1em;
+          color: rgb(0 0 0 / 0.1);
+          line-height: 0.75;
+          letter-spacing: -5px;
+        }
+
+        span {
+          color: rgb(255 0 0 / 0.15);
+        }
+      </style>
+      <div part="watermark">
+        U n d y i n g L o v e U n d y i n g L o v e U n d y i n g L o v e
+        <span part="copyright"
+          >&copy;2 0 2 7 U n d y i n g L o v e U n L t d .</span
+        >
+        U n d y i n g L o v e U n d y i n g L o v e U n d y i n g L o v e
+        <span part="copyright"
+          >&copy;2 0 2 7 U n d y i n g L o v e U n L t d .</span
+        >
+        U n d y i n g L o v e U n d y i n g L o v e U n d y i n g L o v e
+        <span part="copyright"
+          >&copy;2 0 2 7 U n d y i n g L o v e U n L t d .</span
+        >
+        U n d y i n g L o v e U n d y i n g L o v e U n d y i n g L o v e
+        <span part="copyright"
+          >&copy;2 0 2 7 U n d y i n g L o v e U n L t d .</span
+        >
+        U n d y i n g L o v e U n d y i n g L o v e U n d y i n g L o v e
+        <span part="copyright"
+          >&copy;2 0 2 7 U n d y i n g L o v e U n L t d .</span
+        >
+        U n d y i n g L o v e U n d y i n g L o v e U n d y i n g L o v e
+        <span part="copyright"
+          >&copy;2 0 2 7 U n d y i n g L o v e U n L t d .</span
+        >
+        U n d y i n g L o v e U n d y i n g L o v e U n d y i n g L o v e
+        <span part="copyright"
+          >&copy;2 0 2 7 U n d y i n g L o v e U n L t d .</span
+        >
+        U n d y i n g L o v e U n d y i n g L o v e U n d y i n g L o v e
+        <span part="copyright"
+          >&copy;2 0 2 7 U n d y i n g L o v e U n L t d .</span
+        >
+        U n d y i n g L o v e U n d y i n g L o v e U n d y i n g L o v e
+        <span part="copyright"
+          >&copy;2 0 2 7 U n d y i n g L o v e U n L t d .</span
+        >
+        U n d y i n g L o v e U n d y i n g L o v e U n d y i n g L o v e
       </div>
     </template>
 
